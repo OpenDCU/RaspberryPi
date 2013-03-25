@@ -2,6 +2,8 @@
 ```
 sudo apt-get update
 sudo apt-get upgrade
+
+sudo apt-get install git
 ```
 
 ##Working headless
@@ -31,6 +33,10 @@ The Velleman K8055 is an IO board with cute LEDs, DAC and stuff. It has a totall
 
 Runes from https://github.com/rm-hull/k8055
 ```
+mkdir ~/velleman; cd ~/velleman
+git clone https://github.com/rm-hull/k8055.git
+cd k8055
+
 sudo apt-get install libusb-dev swig libwxgtk2.8-dev
 make all
 sudo make install
