@@ -1,3 +1,9 @@
+##Basic stuff...
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
+
 ##Working headless
 The way I work is to mount the image file in linux and hack /etc/networking/interfaces to configure a static address for the eth0, and plug it in to the ehternet port on my laptop. I use wireless to connect my laptop to the outside world and an extra wired ethernet adaptor to connect the pi to the main ethernet.
 
