@@ -48,3 +48,7 @@ sudo make pyinstall guiinstall
 sudo apt-get install python-pip python2.7-dev build-essential 
 ```
 Useful stuff about tornado at http://niltoid.com/blog/category/raspberry-pi/
+```
+sudo easy_install -U distribute
+sudo pip install tornado
+```
