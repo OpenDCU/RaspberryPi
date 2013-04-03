@@ -45,5 +45,5 @@ sudo make pyinstall guiinstall
 ```
 ##Pythonc stuff
 ```
-apt-get install python-pip python-dev build-essential 
+sudo apt-get install python-pip python-dev build-essential 
 ```
