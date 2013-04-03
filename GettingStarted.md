@@ -45,5 +45,6 @@ sudo make pyinstall guiinstall
 ```
 ##Pythonc stuff
 ```
-sudo apt-get install python-pip python-dev build-essential 
+sudo apt-get install python-pip python2.7-dev build-essential 
 ```
+Useful stuff about tornado at http://niltoid.com/blog/category/raspberry-pi/
