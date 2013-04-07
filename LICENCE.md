@@ -6,4 +6,4 @@ A final choice of licence has not yet been made. Be aware
 
 Please put at the top of any source code, etc a notice in the following format:
 
-"Created by <who>, copyright <year> assigned to OpenDCU.org"
+"Created by {{who}}, copyright {{year}} assigned to OpenDCU.org"
