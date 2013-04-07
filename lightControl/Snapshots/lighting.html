@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Lighting control</title>
+<!--
+  My preferred way to interact with an SVG is to load it into the DOM.
+
+  An even more elegant option is to use server templating to embed the
+  SVG into the page as a hidden object which can then be copied to
+  where it's needed (obviously that only makes sense if you need more
+  than one copy; otherwise you might as well put the SVG in position
+  from the outset.
+
+  The advantage of the embedded option is that there are no secondary
+  file fetches, so client performance is optimised and server loading
+  is minimised.
+
+  One disadvantage of loading into the DOM is that you can't use IDs
+  to reference elements of the SVG. I've solved this in this case by
+  editing the SVG source to replace the "id" attribute added in
+  Inkscape with a class instead. Inscape cannot directly add a class,
+  but it does preserve classes when editing.
+-->
+<script>
+function f(x) {
+  a=document.getElementsByClassName("glass")[x]
+  a.style.fill=a.isOn?'#cccccc':'#ffd42a';
+  a.isOn=!a.isOn;
+}
+
+function g() {
+  var oReq = new XMLHttpRequest();
+  //oReq.onload = reqListener;
+  oReq.open("get", "/light/lightbulb.svg", false);
+  oReq.send(null);
+
+  var xmldoc = oReq.responseXML;
+  //paras = document.getElementsByClassName("p");
+  for (i=0;i<5; i++) {
+    var node = document.importNode(xmldoc.getElementsByTagName('svg').item(0), true);
+    z=document.getElementById('myImage').appendChild(node);
+    //z.onclick=function() {f(i);};
+    z.setAttribute("onclick","f("+i+")");
+    z.isOn=false;
+  }
+}
+</script>
+
+</head>
+<body onload="g()">
+  <div id="myImage"></div>
+
+
+<!-- This alternative ersion uses object. Note that onclick won't work when set on the object (at least in Chrome and Firefox)
+Note that SVGs loaded using "object" and "iframe" can both be drilled into from outside, but "embed" or "img" cannot.
+
+<body onload="h()">
+<script>
+function h() {
+  l=document.getElementsByTagName("object")[0];
+  l.isOn=false;
+}
+function z(){
+  l=document.getElementsByTagName("object")[0]
+  m=l.contentDocument.getElementsByClassName("glass")[0];
+  m.style.fill=l.isOn?'#cccccc':'#ffd42a';
+  l.isOn=!l.isOn;
+}
+</script>
+  <div onclick="z()" id="myImage">doit</div>
+  <object onclick="z()" data="http://localhost/light/lightbulb.svg">
+-->
+</body>
+</html>
+

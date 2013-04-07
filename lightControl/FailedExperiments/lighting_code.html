@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Lighting control</title>
+<script>
+var svg=svg||{};
+function f() {
+  a=document.getElementsByTagName("object")[0].contentDocument.defaultView;
+  a.toggle();
+}
+</script>
+
+</head>
+<body>
+  <div onclick="f()" id="myImage">Toggle</div>
+  <p><div><object data="/light/lightbulb_code.svg" type="image/svg+xml" width="100px" height="200px"></div></p>
+  <p> Hello</p>
+  <p><div><iframe src="/light/lightbulb.svg" type="image/svg+xml" width="100px" height="200px"></div> Hello</p>
+  <p><div><object data="/light/lightbulb_code.svg" type="image/svg+xml" width="100px" height="200px"></div> Hello</p>
+  <object data="/light/lightbulb.svg" type="image/svg+xml" width="100px" height="200px">
+  <object data="/light/lightbulb_code.svg" type="image/svg+xml">
+  <object data="/light/lightbulb_code.svg" type="image/svg+xml">
+  <object data="/light/lightbulb_code.svg" type="image/svg+xml">
+</body>
+</html>
+

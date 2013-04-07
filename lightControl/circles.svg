@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<svg width="450" height="80" xmlns="http://www.w3.org/2000/svg">
+    <script>
+    document.fillCircle = function(id) {
+        var circles = document.getElementsByTagName('circle');
+        [].forEach.call(circles, function(c) {
+            c.setAttribute('fill',c.id==id?'#f00':'#0f0');
+        });
+    }
+    </script>
+    <g>
+        <line y1="35" x1="35" y2="35" x2="375" stroke-width="3" stroke="#000000"/>
+        <circle id="state1" r="30" cy="35" cx="35"  stroke-width="3" stroke="#000000" fill="#ffffff" onclick="fillCircle(this.id);"/>
+        <circle id="state2" r="30" cy="35" cx="205" stroke-width="3" stroke="#000000" fill="#ffffff" onclick="fillCircle(this.id);"/>
+        <circle id="state3" r="30" cy="35" cx="375" stroke-width="3" stroke="#000000" fill="#ffffff" onclick="fillCircle(this.id);"/>
+    </g>
+</svg>

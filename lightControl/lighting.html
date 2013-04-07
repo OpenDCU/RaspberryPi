@@ -1,0 +1,60 @@
+<html>
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<title>Lighting control</title>
+<!--
+  Incoming message format:
+    <Circuit: Integer> <isOn: Boolean>
+  Outgoing formats:
+    VALUE <Circuit: Integer> <isOn: Boolean>
+    REGISTER <Circuit: Integer> <name: text>
+    UNREGISTER <Circuit: Integer>
+-->
+<script>
+circuits=["Lounge Ceiling", "Lounge Table", "Lounge Standard"];
+initValues=[true,false,false]; // this is a buggy way to do this -- there's a race condition!
+
+function sendEvent(cct,isOn) {}
+
+function rxOneEvent(cct,isOn) {
+  a=document.getElementsByClassName("glass")[cct]
+  a.style.fill=isOn?'#ffd42a':'#cccccc';
+  a.isOn=isOn;
+}
+
+function toggle(event) {
+  x=event.data.cct;
+  a=document.getElementsByClassName("glass")[x]
+  a.style.fill=a.isOn?'#cccccc':'#ffd42a';
+  a.isOn=!a.isOn;
+  sendEvent(x,a.isOn);
+}
+
+function addCircuits() {
+  var oReq = new XMLHttpRequest();
+  //oReq.onload = reqListener;
+  oReq.open("get", "/light/lightbulb.svg", false);
+  oReq.send(null);
+
+  var xmldoc = oReq.responseXML;
+  for (i=0; i < circuits.length; i++) {
+    var node = document.importNode(xmldoc.getElementsByTagName('svg').item(0), true);
+    z=document.getElementById('myImage').appendChild(node);
+    $(z).wrap("<div>");
+    $(z.parentElement).on("click",{cct:i},toggle);
+    $(z).before("<span>"+circuits[i]+"</span>");
+    g=z.getElementsByClassName("glass")[0];
+    g.isOn=initValues[i];
+    if (g.isOn) {
+      g.style.fill='#ffd42a';
+    }
+  }
+}
+</script>
+
+</head>
+<body onload="addCircuits()">
+  <div id="myImage"></div>
+</body>
+</html>
+

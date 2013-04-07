@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<title>Lighting control</title>
+<!--
+  Incoming message format:
+    <Circuit: Integer> <isOn: Boolean>
+  Outgoing formats:
+    VALUE <Circuit: Integer> <isOn: Boolean>
+    REGISTER <Circuit: Integer> <name: text>
+    UNREGISTER <Circuit: Integer>
+-->
+<script>
+circuits=["Lounge Ceiling", "Lounge Table", "Lounge Standard"];
+initValues=[true,false,false]; // this is a buggy way to do this -- there's a race condition!
+
+function sendEvent(cct,isOn) {}
+
+function rxOneEvent(cct,isOn) {
+  a=document.getElementsByClassName("glass")[cct]
+  a.style.fill=isOn?'#ffd42a':'#cccccc';
+  a.isOn=isOn;
+}
+
+function toggle(event) {
+  x=event.data.cct;
+  a=document.getElementsByClassName("glass")[x]
+  a.style.fill=a.isOn?'#cccccc':'#ffd42a';
+  a.isOn=!a.isOn;
+  sendEvent(x,a.isOn);
+}
+
+function addCircuits() {
+
+  for (i=0; i < circuits.length; i++) {
+//    z=$('#myImage').append('<div><span>'+circuits[i]+'</span><object data="/light/lightbulb_object.svg"><param name="isOn" value="'+ initValues[i] +'"/></object></div>');
+//    z=$('#myImage').append('<div><span>'+circuits[i]+'</span><param name="isOn" value="'+ initValues[i] +'"></div>');
+//    z.on("click",{cct:i},toggle);
+  }
+}
+</script>
+
+</head>
+<body onload="addCircuits()">
+  <div id="myImage"></div>
+  <div onclick="$('object',this)[0].toggle()"><span>lounge center</span><object onclick="this.toggle()" data="/light/lightbulb_object.svg?isOn=true"></object></div>
+  <div><span>lounge table</span><object data="/light/lightbulb_object.svg"> </object></div>
+  </body>
+</html>
+
