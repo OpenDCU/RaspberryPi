@@ -5,6 +5,13 @@ sudo apt-get upgrade
 
 sudo apt-get install git
 ```
+###GFetting the stuff from githuib
+1. Make yourself a github identity
+2. install git (see secton above)
+2. mkdir OpenDCU
+3. cd OpenDCU
+4. to use ssh: git clone git@github.com:OpenDCU/RaspberryPi.git
+    or to use http: 
 
 ##Working headless
 The way I work is to mount the image file in linux and hack /etc/networking/interfaces to configure a static address for the eth0, and plug it in to the ehternet port on my laptop. I use wireless to connect my laptop to the outside world and an extra wired ethernet adaptor to connect the pi to the main ethernet.
