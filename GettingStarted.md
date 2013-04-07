@@ -1,3 +1,5 @@
+All the following assumes a Linux environment. If you've not got one, best option is to install VirtualBox and create a guest Linux installation.
+
 ##Basic stuff...
 ```
 sudo apt-get update
@@ -5,13 +7,35 @@ sudo apt-get upgrade
 
 sudo apt-get install git
 ```
-###GFetting the stuff from githuib
+###Getting the stuff from githuib
 1. Make yourself a github identity
 2. install git (see secton above)
 2. mkdir OpenDCU
 3. cd OpenDCU
-4. to use ssh: git clone git@github.com:OpenDCU/RaspberryPi.git
-    or to use http: 
+4. to use ssh:
+
+    ```
+    git clone git@github.com:OpenDCU/RaspberryPi.git
+    ```
+
+    or to use http:
+
+    ```
+    git clone https://github.com/OpenDCU/RaspberryPi.git
+    ```
+5. Create a directory for your own work and start working in it, or start working joinly on an existing directory (As appropriate)
+6. Ask an OpenHub github owner to add you to the committers
+6. To update the master, from your base directory
+    ```
+    git add *
+    git status             ## check that your changes are corectly 
+    git commit -m"your message describing your changes"
+    git pull origin master ## merge other people's changes into your working directory
+
+    ## at this point any conflicts will be highlighted, and must be resolved/committed before you can...
+    
+    git push
+    ```
 
 ##Working headless
 The way I work is to mount the image file in linux and hack /etc/networking/interfaces to configure a static address for the eth0, and plug it in to the ehternet port on my laptop. I use wireless to connect my laptop to the outside world and an extra wired ethernet adaptor to connect the pi to the main ethernet.
