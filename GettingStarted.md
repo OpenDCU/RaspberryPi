@@ -7,7 +7,9 @@ sudo apt-get upgrade
 
 sudo apt-get install git
 ```
-###Getting the stuff from githuib
+###Getting the stuff from github
+There is an "OpenDCU" organisation on Github (https://github.com/OpenDCU). For the moment, all Rasperry Pi work is in a single repository called (you guessed it!) RaspberryPi. To get your local copy...
+
 1. Make yourself a github identity
 2. install git (see secton above)
 2. mkdir OpenDCU
