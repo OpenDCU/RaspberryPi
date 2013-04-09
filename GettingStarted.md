@@ -61,6 +61,9 @@ route add default gw 192.168.1.254
 
 ***Longer term, fixing my laptop to provide a router with NAT, and a DCHP server (with hard-wired address allocation for the Pi) for the wired ethernet would allow the Pi to be run unmodified (and allow multiple Pi's to be connected easily too)***
 
+##Cross compiling
+[This video](http://www.youtube.com/watch?feature=player_embedded&v=OHDddt4LhEk) is a great introduction on setting up cross-compiling from Windows (using Ubuntu as a VirtualBox guest operating system). This is dealing with a media centre install, but the tools and the principles are generally applicable.
+
 ##Installing Velleman K8055 drivers
 The Velleman K8055 is an IO board with cute LEDs, DAC and stuff. It has a totally naff serial-protocol interface, but it is great for "proof of concept" hacking.
 
