@@ -79,7 +79,7 @@ sudo make install
 make pylib k8055gui
 sudo make pyinstall guiinstall
 ```
-##Pythonc stuff
+##Pythonic stuff
 ```
 sudo apt-get install python-pip python2.7-dev build-essential 
 ```
