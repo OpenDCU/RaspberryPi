@@ -88,3 +88,7 @@ Useful stuff about tornado at http://niltoid.com/blog/category/raspberry-pi/
 sudo easy_install -U distribute
 sudo pip install tornado
 ```
+I've also tried 
+```
+sudo apt-get install python-tornado
+```
