@@ -7,6 +7,10 @@ sudo apt-get upgrade
 
 sudo apt-get install git
 ```
+Rob van der Linden has put some useful stuff about getting started at http://openmicros.org/index.php/articles/94-ciseco-product-documentation/raspberry-pi/283-setting-up-my-raspberry-pi
+
+This has a particular focus on working with the Eve add-on board, but much of it is of general interest.
+
 ###Getting the stuff from github
 There is an "OpenDCU" organisation on Github (https://github.com/OpenDCU). For the moment, all Rasperry Pi work is in a single repository called (you guessed it!) RaspberryPi. To get your local copy...
 
