@@ -44,7 +44,9 @@ There is an "OpenDCU" organisation on Github (https://github.com/OpenDCU). For t
     ```
 
 ##Working headless
-The way I work is to mount the image file in linux and hack /etc/networking/interfaces to configure a static address for the eth0, and plug it in to the ehternet port on my laptop. I use wireless to connect my laptop to the outside world and an extra wired ethernet adaptor to connect the pi to the main ethernet.
+{ ***This section needs updating*** }
+
+The way I used to work was to mount the image file in linux and hack /etc/networking/interfaces to configure a static address for the eth0, and plug it in to the ehternet port on my laptop. I use wireless to connect my laptop to the outside world and an extra wired ethernet adaptor to connect the pi to the main ethernet.
 
 pi stuff:
 ```
