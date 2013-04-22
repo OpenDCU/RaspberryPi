@@ -1,4 +1,4 @@
 RaspberryPi
 ===========
 
-Prototype work on OpenDCU main unit
+Prototype work on OpenDCU main unit.
