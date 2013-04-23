@@ -93,6 +93,13 @@ class ChatSocketHandler(tornado.websocket.WebSocketHandler):
             self.render_string("message.html", message=chat))
 
         ChatSocketHandler.update_cache(chat)
+        logging.info("chat body:" + parsed["body"])
+        if parsed["body"] == "on":
+          logging.info("turn on")
+        elif parsed["body"] == "off":
+          logging.info("turn off")
+        else:
+          logging.info("do nothing")
         ChatSocketHandler.send_updates(chat)
 
 
